@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      7676,        212]
+NotebookDataLength[      7745,        213]
 NotebookOptionsPosition[      4986,        162]
-NotebookOutlinePosition[      5456,        179]
-CellTagsIndexPosition[      5413,        176]
+NotebookOutlinePosition[      5525,        180]
+CellTagsIndexPosition[      5482,        177]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -161,7 +161,8 @@ Anomaly detection
 }, Open  ]]
 },
 WindowSize->{1024.5, 537.},
-WindowMargins->{{0, Automatic}, {0.75, Automatic}},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+PrivateNotebookOptions->{"CloudPublishPath"->"autoencoders_review.nb"},
 FrontEndVersion->"12.2 for Linux x86 (64-bit) (December 12, 2020)",
 StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
   CharacterEncoding -> "UTF-8"],
