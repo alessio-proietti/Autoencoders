@@ -1,0 +1,220 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7676,        212]
+NotebookOptionsPosition[      4986,        162]
+NotebookOutlinePosition[      5456,        179]
+CellTagsIndexPosition[      5413,        176]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Autoencoders", "Title",
+ CellChangeTimes->{{3.834288458563717*^9, 
+  3.834288482691607*^9}},ExpressionUUID->"e0791848-67fa-47da-8eda-\
+103c620303d8"],
+
+Cell["A problem in Unsupervised Learning", "Subtitle",
+ CellChangeTimes->{{3.834288559633334*^9, 3.834288574047036*^9}, {
+   3.834288615488235*^9, 3.8342886204189663`*^9}, 
+   3.8342886701809397`*^9},ExpressionUUID->"f4717d03-979c-4fc9-9c44-\
+3c1ecf42e899"],
+
+Cell["linear and non linear learning", "Subsubtitle",
+ CellChangeTimes->{{3.8342885974850407`*^9, 
+  3.834288608281107*^9}},ExpressionUUID->"92212465-e8a3-489f-9ee2-\
+3d8f8073161c"],
+
+Cell["Alessio Proietti", "Author",
+ CellChangeTimes->{{3.834288634505246*^9, 
+  3.834288643547019*^9}},ExpressionUUID->"3abd2bd3-744d-43d9-a27c-\
+13cba5ffae01"],
+
+Cell["\<\
+Mathematics and Physics Department
+Roma Tre University\
+\>", "Department",
+ CellChangeTimes->{{3.834288724318307*^9, 3.834288730193098*^9}, {
+  3.834288771566729*^9, 3.834288792070921*^9}, {3.834288880413623*^9, 
+  3.8342888805046053`*^9}, {3.834289092100226*^9, 
+  3.8342891094783707`*^9}},ExpressionUUID->"18c7304c-6fc6-4e3c-bd90-\
+4ae85aeb288f"],
+
+Cell["July 22nd 2021", "Date",
+ CellChangeTimes->{{3.8342887394572906`*^9, 
+  3.834288768178549*^9}},ExpressionUUID->"d304d061-c3e3-47b8-b39d-\
+e88f7046cd6a"],
+
+Cell[CellGroupData[{
+
+Cell["Linear Autoencoder", "Section",
+ CellChangeTimes->{{3.8342891734684677`*^9, 
+  3.834289177424386*^9}},ExpressionUUID->"25bdbef6-7a99-458d-aa8d-\
+ebaf755e92b1"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Subsection",
+ CellChangeTimes->{{3.8342892585246153`*^9, 
+  3.834289275550284*^9}},ExpressionUUID->"3ec529ea-5c47-41aa-ba99-\
+7d63217651ec"],
+
+Cell["The Problem", "Subsubsection",
+ CellChangeTimes->{{3.834289633421805*^9, 
+  3.834289639051141*^9}},ExpressionUUID->"177c167c-1e0c-4ee6-bd54-\
+818cc96e65c1"],
+
+Cell["Learning a Linear Autoencoder", "Subsubsection",
+ CellChangeTimes->{{3.834289643264291*^9, 
+  3.83428965611008*^9}},ExpressionUUID->"9dc1f8c9-92c9-4863-9cf1-\
+d72d59fcc1b0"]
+}, Open  ]],
+
+Cell["Example", "Subsection",
+ CellChangeTimes->{{3.8342892920720863`*^9, 3.834289295036598*^9}, 
+   3.834289785406043*^9},ExpressionUUID->"b5bbdc05-6936-427a-b9ec-\
+02346fff8a3e"],
+
+Cell["Relations to PCA", "Subsection",
+ CellChangeTimes->{{3.834289299822191*^9, 
+  3.834289303632123*^9}},ExpressionUUID->"06b3bbce-0efd-4efa-a0ce-\
+5152f792e910"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Non Linear Autoencoder", "Section",
+ CellChangeTimes->{{3.834289183606483*^9, 
+  3.834289208588519*^9}},ExpressionUUID->"db3a1635-369b-4aaf-9627-\
+332380410f98"],
+
+Cell["Modeling Principles", "Subsection",
+ CellChangeTimes->{{3.8342897504838343`*^9, 
+  3.834289753568144*^9}},ExpressionUUID->"dbac0c25-870a-4412-8ccc-\
+4aafb91238b6"],
+
+Cell["Autoencoder Neural Networks", "Subsection",
+ CellChangeTimes->{{3.834289858459638*^9, 
+  3.834289864505702*^9}},ExpressionUUID->"8d465388-6aff-4363-98dc-\
+4ceded9c323a"],
+
+Cell[CellGroupData[{
+
+Cell["Example", "Subsection",
+ CellChangeTimes->{{3.834289759252872*^9, 
+  3.834289782970089*^9}},ExpressionUUID->"4e6b1f64-6040-4a04-a175-\
+2e2392519930"],
+
+Cell["Learn a parameterization of a manifold", "Subsubsection",
+ CellChangeTimes->{{3.8342898112689543`*^9, 
+  3.834289822221568*^9}},ExpressionUUID->"ecddfa8b-ed69-444c-9440-\
+19277787e471"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Other Applications", "Section",
+ CellChangeTimes->{{3.834289214804042*^9, 3.834289217271326*^9}, {
+  3.8342899007855797`*^9, 3.834289902199929*^9}, {3.8342900260617943`*^9, 
+  3.834290028437723*^9}},ExpressionUUID->"79e45da1-9b85-4c77-97ce-\
+5fc1f8a6d4b0"],
+
+Cell[CellGroupData[{
+
+Cell["Image Processing", "Subsection",
+ CellChangeTimes->{{3.834290032895626*^9, 
+  3.834290036231559*^9}},ExpressionUUID->"e22fd548-6eab-4d75-b3e6-\
+dd3f2523ccc8"],
+
+Cell["Image Denoising", "Subsubsection",
+ CellChangeTimes->{{3.834290081664564*^9, 
+  3.8342900865038233`*^9}},ExpressionUUID->"d45e8a6a-ba61-4ba2-b973-\
+86222b4eec17"],
+
+Cell["Super-resolution", "Subsubsection",
+ CellChangeTimes->{{3.834290091719695*^9, 
+  3.834290095547698*^9}},ExpressionUUID->"b8988ef1-db3f-4da0-ae8a-\
+975114c1596f"]
+}, Open  ]],
+
+Cell["\<\
+Anomaly detection
+\
+\>", "Subsection",
+ CellChangeTimes->{{3.8342899199376593`*^9, 3.834289926297097*^9}, {
+  3.834289960030027*^9, 
+  3.83428996705781*^9}},ExpressionUUID->"c4df8f27-6257-4aa6-8938-\
+90974edb9fd6"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1024.5, 537.},
+WindowMargins->{{0, Automatic}, {0.75, Automatic}},
+FrontEndVersion->"12.2 for Linux x86 (64-bit) (December 12, 2020)",
+StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"db1ded74-a525-4b8d-9d0a-d690840ab5e9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 155, 3, 96, "Title",ExpressionUUID->"e0791848-67fa-47da-8eda-103c620303d8"],
+Cell[738, 27, 257, 4, 33, "Subtitle",ExpressionUUID->"f4717d03-979c-4fc9-9c44-3c1ecf42e899"],
+Cell[998, 33, 181, 3, 31, "Subsubtitle",ExpressionUUID->"92212465-e8a3-489f-9ee2-3d8f8073161c"],
+Cell[1182, 38, 160, 3, 42, "Author",ExpressionUUID->"3abd2bd3-744d-43d9-a27c-13cba5ffae01"],
+Cell[1345, 43, 358, 8, 31, "Department",ExpressionUUID->"18c7304c-6fc6-4e3c-bd90-4ae85aeb288f"],
+Cell[1706, 53, 158, 3, 43, "Date",ExpressionUUID->"d304d061-c3e3-47b8-b39d-e88f7046cd6a"],
+Cell[CellGroupData[{
+Cell[1889, 60, 165, 3, 70, "Section",ExpressionUUID->"25bdbef6-7a99-458d-aa8d-ebaf755e92b1"],
+Cell[CellGroupData[{
+Cell[2079, 67, 162, 3, 34, "Subsection",ExpressionUUID->"3ec529ea-5c47-41aa-ba99-7d63217651ec"],
+Cell[2244, 72, 162, 3, 33, "Subsubsection",ExpressionUUID->"177c167c-1e0c-4ee6-bd54-818cc96e65c1"],
+Cell[2409, 77, 179, 3, 33, "Subsubsection",ExpressionUUID->"9dc1f8c9-92c9-4863-9cf1-d72d59fcc1b0"]
+}, Open  ]],
+Cell[2603, 83, 180, 3, 34, "Subsection",ExpressionUUID->"b5bbdc05-6936-427a-b9ec-02346fff8a3e"],
+Cell[2786, 88, 164, 3, 34, "Subsection",ExpressionUUID->"06b3bbce-0efd-4efa-a0ce-5152f792e910"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2987, 96, 167, 3, 70, "Section",ExpressionUUID->"db3a1635-369b-4aaf-9627-332380410f98"],
+Cell[3157, 101, 169, 3, 34, "Subsection",ExpressionUUID->"dbac0c25-870a-4412-8ccc-4aafb91238b6"],
+Cell[3329, 106, 175, 3, 34, "Subsection",ExpressionUUID->"8d465388-6aff-4363-98dc-4ceded9c323a"],
+Cell[CellGroupData[{
+Cell[3529, 113, 155, 3, 34, "Subsection",ExpressionUUID->"4e6b1f64-6040-4a04-a175-2e2392519930"],
+Cell[3687, 118, 191, 3, 33, "Subsubsection",ExpressionUUID->"ecddfa8b-ed69-444c-9440-19277787e471"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3927, 127, 262, 4, 70, "Section",ExpressionUUID->"79e45da1-9b85-4c77-97ce-5fc1f8a6d4b0"],
+Cell[CellGroupData[{
+Cell[4214, 135, 164, 3, 34, "Subsection",ExpressionUUID->"e22fd548-6eab-4d75-b3e6-dd3f2523ccc8"],
+Cell[4381, 140, 168, 3, 33, "Subsubsection",ExpressionUUID->"d45e8a6a-ba61-4ba2-b973-86222b4eec17"],
+Cell[4552, 145, 167, 3, 33, "Subsubsection",ExpressionUUID->"b8988ef1-db3f-4da0-ae8a-975114c1596f"]
+}, Open  ]],
+Cell[4734, 151, 224, 7, 61, "Subsection",ExpressionUUID->"c4df8f27-6257-4aa6-8938-90974edb9fd6"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
